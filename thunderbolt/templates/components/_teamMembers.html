@@ -1,0 +1,38 @@
+{% load static %}
+
+
+<section class="inner-section inner-section-team">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-sm-12">
+              <h2 class="text-center">Our team</h2>
+            </div>
+              {% if members %}
+                  {% for member in members %}
+                     <div class="col-sm-6 col-md-6 col-lg-4">
+                     <div class="grid-holder">
+                    <img src="{{ member.photo_main.url }}" alt="" class="img-fluid img-users">
+                     <h3>{{member.name}}</h3>
+                    <h4>{{ member.post }}</h4>
+                    <p>{{ member.description }}</p>
+                    <a href="{{ member.github }}"><i class="fab fa-github"></i></a>
+                    <a href="{{ member.linkedin }}"><i class="fab fa-linkedin"></i></a>
+
+                    </div>
+                    </div>
+                  {% endfor %}
+              {% else %}
+                  <div class="col-md-12"><p>No Team Member Yet .</p></div>
+
+              {% endif %}
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </section>

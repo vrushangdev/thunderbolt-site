@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<header class="inner-page inner-page-community">
+      <div class="row">
+        <div class="container">
+          <h1>Community</h1>
+        </div>
+      </div>
+    </header>
+
+ {% include 'components/_contactForm.html' %}
+    {% include 'components/_joinCommunity.html' %}
+
+    {% include 'components/_subscribeMailingBox.html' %}
+
+{% endblock %}

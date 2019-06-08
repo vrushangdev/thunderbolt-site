@@ -1,0 +1,35 @@
+{% load static %}
+<header class="inner-page">
+      <div class="row">
+        <div class="container">
+          <h1 class="text-center">Product Roadmap</h1>
+        </div>
+      </div>
+    </header>
+<section class="section-timeline">
+      <div class="container">
+        <h2 class="text-center">Product Roadmap</h2>
+        <div class="timeline-wrap">
+          <ol class="timeline">
+              {% if roadmap %}
+                  {% for milestone in roadmap %}
+                    <li class="timeline__entry">
+                      <time>
+                      {{ milestone.completion_date |date:"M Y" }}
+                      </time>
+                    <br>
+                    <ul class="timeline__list">
+                     <li>{{ milestone.details }}</li>
+
+                    </ul>
+                    </li>
+                  {% endfor %}
+
+              {% else %}
+                <p>Road Map Will Be Update Soon .</p>
+              {% endif %}
+          </ol>
+
+        </div>
+      </div>
+      </section>

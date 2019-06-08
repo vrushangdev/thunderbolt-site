@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="inner-page inner-page-about">
+        <div class="row">
+          <div class="container">
+            <h1>About us</h1>
+          </div>
+        </div>
+      </header>
+      <section class="inner-section">
+        <div class="container">
+          <div class="wrapper-product">
+            <div class="row">
+              <div class="col-md-12 col-lg-6 col-xl-6">
+                <div class="">
+                  <h5 class="wh-th">Young enthusiasts with great idea</h5>
+                  <!-- <h2></h2> -->
+                  <p class="lead-product">We are young enthusiasts passionate about solving great problems faced by masses and enterprises. Currently industry is facing huge problems with Digital identity, piracy and digital signatures. So, we came up with a perpetual and universally acceptable solution for setting up Universal identity protocol and solve alot digital identity related problems & stop piracy from the internet.</p>
+                  <p class="lead-product">We aim to revolutionize digital identity and privacy. Our team consists of young enthusiasts and some great developers who had previously worked with some great startups and tech giants like IBM, Google and alot more.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-6 col-xl-6">
+                <img src="{% static 'images/about-img.jpg' %}" alt="" class="img-shadow img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include 'components/_advisors.html'%}
+
+      {% include 'components/_teamMembers.html'%}
+
+      {% include 'components/_joinTeam.html'%}
+
+       {% include 'components/_subscribeMailingBox.html'%}
+
+{% endblock %}
