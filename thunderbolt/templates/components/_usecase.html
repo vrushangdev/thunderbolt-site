@@ -1,43 +1,71 @@
 {% load static %}
+ {% if usecases %}
+     {% for usecase in usecases %}
+        {% if  usecase.id|divisibleby:2 %}
 
-<section class="inner-section">
-      <div class="container">
-        <div class="wrapper-product">
-          <div class="row">
-            <div class="col-md-12 col-lg-6 col-xl-6">
-              <div class=""> <h2></h2>
-                <h5 class="wh-th">Universal digital identity protocol </h5>
+            <section class="inner-section inner-section-grey">
+             <div class="container">
+                    <div class="wrapper-product">
+                      <div class="row">
+                           <div class="col-md-12 col-lg-6 col-xl-6">
+                          <img src="{{ usecase.uimg.url }}" alt="" class="img-shadow img-fluid">
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                          <div class=""> <h2></h2>
+                            <h5 class="wh-th">{{ usecase.title }}</h5>
 
-                <p class="lead-product">An open source platform to autonomously create proof of ownership of your digital self and contents and let you and your customers enjoy a convenient identity services (like digital stamping, digital signature and digital watermarking) based on blockchain IDs for most digital contents. We will let you and your customers take control of your digital content and digital self.</p>
+                            <p class="lead-product">{{ usecase.desc }}</p>
 
-              </div>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-6">
-              <img src="{% static 'images/universal-identity.jpg' %}" alt="" class="img-shadow img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="inner-section inner-section-grey">
-      <div class="container">
-        <div class="wrapper-product">
-          <div class="row">
-            <div class="col-md-12 col-lg-6 col-xl-6">
-              <img src="{% static 'images/scalable-img.jpg' %}" alt="" class="img-shadow img-fluid">
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-6">
-              <div class=""> <h2></h2>
-                <h5 class="wh-th">A flexible & scalable model of identity that works for everyone
-                </h5>
+                          </div>
+                        </div>
 
-                <p class="lead-product">Whether you are an individual, enterprise, business, public administration, or IoT device, ThunderBolt Chain's Universal digital identity protocol makes it easy to create, share, and consume unique identity information based on blockchain. With our platform, Exchange of identity information or standardized digital identity transactions/transafers are possible. Our Universal digital identity protocol is flexible and scalable enough to support countless distinct commercial and non-commercial use cases based on digital identity.</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
-              </div>
-            </div>
+         {% else %}
+                <section class="inner-section">
+             <div class="container">
+                    <div class="wrapper-product">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                          <div class=""> <h2></h2>
+                            <h5 class="wh-th">{{ usecase.title }}</h5>
+
+                            <p class="lead-product">{{ usecase.desc }}</p>
+
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                          <img src="{{ usecase.uimg.url }}" alt="" class="img-shadow img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+         {% endif %}
 
 
-          </div>
-        </div>
-      </div>
-    </section>
+
+
+     {% endfor %}
+     {% else %}
+     <div class="inner-section">
+         <div class="wrapper-product">
+             <div class="container">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                            <h5 class="wh-th">Will Be Updated Soon...</h5>
+
+                            <p class="lead-product">Make Sure To Subscribe To Our Newsletter</p>
+
+                          </div>
+                        </div>
+
+                      </div>
+                 </div>
+                    </div>
+
+                </section>
+{% endif %}

@@ -16,7 +16,11 @@ def about(request):
     }
     return render(request,'pages/about.html',members)
 def usecase(request):
-    return render(request,'pages/usecase.html')
+    use_case_details = Usecase.objects.all()
+    usecases = {
+        'usecases':use_case_details,
+    }
+    return render(request,'pages/usecase.html',usecases)
 def community(request):
     return render(request,'pages/community.html')
 

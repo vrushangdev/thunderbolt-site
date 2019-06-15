@@ -8,6 +8,7 @@ class Contact(models.Model):
     number = models.CharField(max_length=15)
     contact_date = models.DateField(default=datetime.now)
     message = models.TextField(max_length=3000)
+    replied = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
